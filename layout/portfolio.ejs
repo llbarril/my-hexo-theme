@@ -1,0 +1,36 @@
+    <%/*** define pagesPostsArray and push those posts and with have portfolio:true property set in front matter ***/%>
+   
+    <% var pagesPostsArray = []; %>
+    
+    <% site.posts.each(function(item){ %>
+            <% if (item.portfolio) { %>
+               <% pagesPostsArray.push(item) %>
+            <% } %>
+        <% }); %>
+
+    <% site.pages.each(function(item){ %>
+            <% if (item.portfolio) { %>
+              <% pagesPostsArray.push(item) %>  
+            <% } %>
+        <% }); %>
+    
+    <%/*** sort the array by date, older posts and pages go to the bottom of the portfolio ***/%>
+    
+    <% pagesPostsArray.sort(function(a,b){ %>
+        <% return b.date.valueOf() - a.date.valueOf(); %>
+    <% }); %>
+    
+    
+    <%/*** generate the portfolio and populate it ***/%>
+    
+    <% var ppCount = 0; %>
+    <% pagesPostsArray.forEach(function(item, i){ %>        
+       <%  if (i % 3 === 0) { %>
+            <div class="row">
+       <% } %>
+        <%- partial('_partial/portfolio-item', {item: item}) %>
+        <% ppCount += 1; %>
+        <% if (ppCount % 3 === 0 || i === pagesPostsArray.length -1) { %>
+            </div>
+        <% } %>
+    <% }); %>

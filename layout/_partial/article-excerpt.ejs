@@ -1,0 +1,35 @@
+                
+                <!-- Title -->
+                <h2>
+                    <a href="<%- config.root %><%- item.path %>"> 
+                        <%- item.title %>
+                    </a>
+                </h2>
+                   
+                <!-- Date and Author -->
+                <p class="lead">
+                    <!-- author -->
+                </p>
+                <p><i class="fa fa-clock-o"></i> <%= item.date.format(config.date_format) %></p>
+                <hr>
+                
+                <!-- thumbnail -->    
+                <% if(item.thumbnail) { %>
+                <a href="<%- config.root %><%- item.path %>">
+                    <img class="img-responsive img-hover" src="<%- item.thumbnail %>" alt="">
+                </a>
+                <hr>
+                <% } %>
+                
+                
+                <!-- Content -->
+                <%- item.excerpt || item.content %>
+
+                <% if(item.excerpt) { %>
+                        
+                    <a class="btn btn-primary" href="<%- config.root %><%- item.path %>">Read More <i class="fa fa-angle-right"></i></a>
+                        
+                <% } %>
+           
+
+                <hr>

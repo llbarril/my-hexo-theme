@@ -1,0 +1,17 @@
+		<div class="row">
+			<div class="col-md-8">
+				<!-- Blog posts -->
+				<% page.posts.each(function(item){ %>
+    				<%- partial('_partial/article-excerpt', {item: item}) %>
+				<% }); %>
+	
+				<!-- Pager -->
+				<%- partial('_partial/pagination') %>
+			</div>
+
+		 
+        <%- partial('_partial/sidebar') %>
+         
+		</div>
+		
+		

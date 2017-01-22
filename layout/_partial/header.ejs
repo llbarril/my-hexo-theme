@@ -1,0 +1,20 @@
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header"><%= config.title %>
+                    <small><% if (config.subtitle){ %><%= config.subtitle %><% } %></small>
+                </h1>
+                <ol class="breadcrumb">
+                    <% for (var i in theme.menu){ %>
+                        <% if (url_for(theme.menu[i]) === config.root) { %>
+                            <li>
+                                <a href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+                            </li>
+                        <% } %>                          
+                    <% } %>
+                    <% if (path !== "index.html") { %> 
+                        
+                        <li class="active"><%= page.title %></li>
+                    <% } %>
+                </ol>
+            </div>
+        </div>

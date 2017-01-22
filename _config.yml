@@ -1,0 +1,12 @@
+# Header
+menu:
+  Home: /
+  Archives: /archives/arch
+  Categories: /categories
+  Tags: /tags
+  Portfolio: /portfolio
+  About: /about
+
+# Change archive page title here, necessary for breadcrumbs
+archivesTitle:
+  name: Archive

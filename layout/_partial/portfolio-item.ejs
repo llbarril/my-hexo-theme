@@ -1,0 +1,9 @@
+			<div class="col-md-4 img-portfolio">
+                <a href="<%- config.root %><%- item.path %>"> 
+                    <img class="img-responsive img-hover portfolio-img" src="<%- config.root %><%- item.thumbnail || "images/default-thumb.png" %>" alt="">
+                </a>
+                <h3>
+                    <a href="<%- config.root %><%- item.path %>"><%- item.title %></a>
+                </h3>
+                <p><%- item.excerpt %></p>
+            </div>
